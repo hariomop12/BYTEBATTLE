@@ -12,7 +12,7 @@ const fileValidator = (allowedTypes, maxSizeMB) => {
         return res.status(400).json({ error: `Invalid file type. Allowed types: ${allowedTypes.join(', ')}` });
       }
   
-      // Validate file size
+      // Validate file size 
       if (fileSize > maxSizeMB * 1024 * 1024) {
         return res.status(400).json({ error: `File size exceeds ${maxSizeMB} MB limit` });
       }
@@ -20,5 +20,4 @@ const fileValidator = (allowedTypes, maxSizeMB) => {
     };
   };
   
-  module.exports = fileValidator;
-  
+module.exports = fileValidator;
